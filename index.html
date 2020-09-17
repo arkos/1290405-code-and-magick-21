@@ -161,7 +161,7 @@
 
       const getFireballSpeed = (isMovingLeft) => isMovingLeft ? 2 : 5;
       const getWizardHeight = (wizardWidth) => 1.337 * wizardWidth;
-      const getWizardX = (gameFieldWidth) => (gameFieldWidth - wizardWidth) / 2;
+      const getWizardX = (gameFieldWidth, wizardWidth) => (gameFieldWidth - wizardWidth) / 2;
       const getWizardY = (gameFieldHeight) => gameFieldHeight / 3;
     </script>
     <script src="js/game.js"></script>
