@@ -60,7 +60,7 @@
       </div>
     </header>
     <div class="overlay setup hidden">
-      <form class="setup-wizard-form" method="post" enctype="multipart/form-data" autocomplete="off">
+      <form class="setup-wizard-form" method="post" enctype="multipart/form-data" autocompconste="off">
         <div class="setup-title">
           <div class="setup-user">
             <div class="upload">
@@ -155,17 +155,14 @@
       </div>
     </template>
     <script>
-      let fireballSize = 22;
-<<<<<<< HEAD
-      let getFireballSpeed = isMovingLeft => (isMovingLeft) ? 2 : 5;
-=======
-      let getFireballSpeed = (isMovingLeft) => isMovingLeft ? 2 : 5;
->>>>>>> ccb69bf930445bd3f6bf2868e76b94cb488f5066
-      let wizardWidth = 70;
-      let getWizardHeight = () => 1.337 * wizardWidth;
-      let wizardSpeed = 3;
-      let getWizardX = gameFieldWidth => (gameFieldWidth - wizardWidth) / 2;
-      let getWizardY = gameFieldHeight => (gameFieldHeight / 3);
+      const fireballSize = 22;
+      const wizardWidth = 70;
+      const wizardSpeed = 3;
+
+      const getFireballSpeed = (isMovingLeft) => isMovingLeft ? 2 : 5;
+      const getWizardHeight = (wizardWidth) => 1.337 * wizardWidth;
+      const getWizardX = (gameFieldWidth) => (gameFieldWidth - wizardWidth) / 2;
+      const getWizardY = (gameFieldHeight) => gameFieldHeight / 3;
     </script>
     <script src="js/game.js"></script>
   </body>
