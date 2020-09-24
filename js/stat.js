@@ -37,7 +37,7 @@ const renderCloud = function (ctx, x, y, color) {
 
 const getMaxElement = (elements) => elements.reduce((max, current) => max < current ? current : max, elements[0]);
 
-const getRandomInt = (max) => Math.floor(Math.random() * Math.floor(max));
+window.getRandomInt = (max) => Math.floor(Math.random() * Math.floor(max));
 
 // Histogram rendering
 
@@ -52,7 +52,7 @@ const renderBar = function (ctx, barHeight, label, value, index) {
 
   ctx.fillText(Math.floor(value), valueX, valueY);
 
-  ctx.fillStyle = (label === TEXT_ALTERNATE) ? BAR_SECONDARY_FILL_STYLE : `hsl(240, ${getRandomInt(100)}%, 50%)`;
+  ctx.fillStyle = (label === TEXT_ALTERNATE) ? BAR_SECONDARY_FILL_STYLE : `hsl(240, ${window.getRandomInt(100)}%, 50%)`;
 
   const barX = CLOUD_TOP_X + 2 * CLOUD_MARGIN + (BAR_WIDTH + BAR_GAP) * index;
   const barY = CLOUD_BOTTOM_Y - CLOUD_MARGIN - barHeight - TEXT_GAP - FONT_GAP;
