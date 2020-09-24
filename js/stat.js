@@ -24,6 +24,8 @@ const TEXT_RESULTS_MESSAGE = `Список результатов:`;
 
 const BAR_PRIMARY_FILL_STYLE = `#000000`;
 const BAR_SECONDARY_FILL_STYLE = `rgba(255, 0, 0, 1)`;
+const BAR_ALTERNATE_FILL_STYLE_HUE = 240;
+const BAR_ALTERNATE_FILL_STYLE_LIGHTNESS = 50;
 const BAR_WIDTH = 40;
 const BAR_GAP = 50;
 const BAR_MAX_HEIGHT = 150;
@@ -52,7 +54,9 @@ const renderBar = function (ctx, barHeight, label, value, index) {
 
   ctx.fillText(Math.floor(value), valueX, valueY);
 
-  ctx.fillStyle = (label === TEXT_ALTERNATE) ? BAR_SECONDARY_FILL_STYLE : `hsl(240, ${getRandomInt(100)}%, 50%)`;
+  ctx.fillStyle = (label === TEXT_ALTERNATE) ? BAR_SECONDARY_FILL_STYLE : `hsl(${BAR_ALTERNATE_FILL_STYLE_HUE},
+    ${getRandomInt(100)}%,
+    ${BAR_ALTERNATE_FILL_STYLE_LIGHTNESS}%)`;
 
   const barX = CLOUD_TOP_X + 2 * CLOUD_MARGIN + (BAR_WIDTH + BAR_GAP) * index;
   const barY = CLOUD_BOTTOM_Y - CLOUD_MARGIN - barHeight - TEXT_GAP - FONT_GAP;
